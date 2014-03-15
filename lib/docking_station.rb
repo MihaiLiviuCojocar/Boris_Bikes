@@ -1,7 +1,15 @@
-require "./lib/docking_station"
+class DockingStation
 
-describe "Docking station" do
+  def initialize
+    @bikes = []
+  end
 
+  def bike_count
+    @bikes.count
+  end
 
+  def dock(bike)
+    @bikes << bike
+  end
 
 end
