@@ -8,4 +8,9 @@ describe "Docking station" do
     expect(station.capacity).to eq(123)
   end
 
+  it "should know when it's empty" do
+    station = DockingStation.new
+    expect(station).to be_empty
+  end
+
 end
