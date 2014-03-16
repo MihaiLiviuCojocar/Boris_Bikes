@@ -42,6 +42,19 @@ describe "BikeContainer" do
     expect(holder.available_bikes).to eq([working_bike])
   end
 
+  it "should not be able to release a bike that it's not docked there" do
+    expect { holder.release(bike) }.to raise_error(RuntimeError)
+  end
+
+  it "should know if the argument is not given" do
+    expect { holder.release }.to raise_error(ArgumentError)
+    expect { holder.dock }.to raise_error(ArgumentError)
+  end
+
+  it "should know if the argument passed is not a bike" do
+    expect { holder.dock(plane) }.to raise_error(NameError)
+  end
+
 end
 
 def fill_station(holder)

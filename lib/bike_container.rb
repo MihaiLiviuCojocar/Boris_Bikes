@@ -24,6 +24,7 @@ module BikeContainer
   end
 
   def release(bike)
+    raise "Can't release this bike because it's not here !" unless bikes.include?(bike)
     bikes.delete(bike)
   end
 
