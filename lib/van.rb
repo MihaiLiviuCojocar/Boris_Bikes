@@ -8,6 +8,9 @@ class Van
     self.capacity = options.fetch(:capacity, capacity)
   end
 
-
+  def release(bike, docking_station)
+    bikes.delete(bike)
+    docking_station.dock(bike)
+  end
 
 end

@@ -6,7 +6,7 @@ describe "Docking station" do
 
   let(:bike)    { Bike.new           }
   let(:station) { DockingStation.new }
-  let(:van)     { Van.new }
+  let(:van)     { Van.new            }
 
   it "should allow setting default capacity when initialized" do
     station = DockingStation.new(:capacity => 123)

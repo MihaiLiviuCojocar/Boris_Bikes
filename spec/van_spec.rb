@@ -13,4 +13,12 @@ describe "Van" do
     expect(van.capacity).to eq(5)
   end
 
+  it "should relese a bike to a docking station or garage" do
+    van.dock(bike)
+    expect(van.bikes).to eq([bike])
+    van.release(bike, station)
+    expect(van.bikes).to eq([])
+    expect(station.bikes).to eq([bike])
+  end
+
 end
