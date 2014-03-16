@@ -12,4 +12,9 @@ class DockingStation
     self.capacity = options.fetch(:capacity, capacity)
   end
 
+  def release_broken_bike(bike,van)
+    bikes.delete(bike)
+    van.dock(bike)
+  end
+
 end
